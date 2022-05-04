@@ -1,0 +1,19 @@
+<div>
+    
+    <!--<a [routerLink]="['/consults']" [routerLinkActive]="['actived']" > Consultar saldo</a>
+    -->
+      <h1>Welcom!</h1>
+    
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile style="height: 200px;">
+    
+        <button *ngIf="!buttomConsults"  (click)="mostrarConsults(true)" mat-raised-button color="primary" > Consultar </button>
+        <app-consult *ngIf="buttomConsults" [denominaciones]="denominaciones" (closeConsult)="cerrarConsult($event)" ></app-consult>
+      </mat-grid-tile>
+      <mat-grid-tile style="height: 200px;">
+          <button  *ngIf="!buttomRetirar" (click)="mostrarretirar(true)"  mat-raised-button color="accent" > Retirar </button>
+          <app-withdrawals *ngIf="buttomRetirar" [denominaciones]="denominaciones" (closeModal)="closeConsults($event)" (FinalDenominaciones)="cambiarTotal($event)" ></app-withdrawals>
+      </mat-grid-tile>
+    </mat-grid-list>
+    
+  </div>

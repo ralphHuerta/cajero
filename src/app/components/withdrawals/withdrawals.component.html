@@ -1,0 +1,21 @@
+
+<h1>Ingrese la cantidad que decea retirar</h1>
+<form #CajeroForm="ngForm" (ngSubmit)="retirarDinero()">
+    <input type="number" name="cantidadRetirarS" [(ngModel)]="cantidadRetirar" pattern="[0-9]+">
+   <!-- <input type="submit" placeholder="Enviar" >-->
+    <button type="submit" mat-button color="primary">Enviar</button>
+</form>
+
+<div *ngIf="title">
+    {{title}}
+    
+    <div *ngIf="primtfValores" >
+        Billetes dados
+        {{primtfValores}}
+
+    </div>
+</div>
+
+<div>
+    <button mat-stroked-button color="warn" (click)="closeBoton(false)">Ok!</button>
+</div>

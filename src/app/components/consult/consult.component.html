@@ -1,0 +1,15 @@
+<h1>Usted tiene disponible
+    <b>${{total}}</b>
+</h1>
+
+<div *ngIf="denominaciones">
+    <ul *ngFor="let item of denominaciones" >
+        <li>
+          <b> Denominacion: {{item.cantidad}} : </b>   $ {{item.valor}}
+        </li>
+        
+    </ul>
+</div>
+<div>
+    <button mat-stroked-button color="warn" (click)="closeBoton()">Ok!</button>
+</div>
