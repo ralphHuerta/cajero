@@ -1,17 +1,21 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-consult',
   templateUrl: './consult.component.html',
   styleUrls: ['./consult.component.css']
 })
-export class ConsultComponent implements OnInit {
+export class ConsultComponent implements OnInit, DoCheck {
   @Input() denominaciones: any
   @Output() closeConsult=new EventEmitter
   public total: number=0
   constructor() { }
 
   ngOnInit(): void {
+    this.TotalDinero()
+  }
+  
+  ngDoCheck(): void {
     this.TotalDinero()
   }
   TotalDinero(){
