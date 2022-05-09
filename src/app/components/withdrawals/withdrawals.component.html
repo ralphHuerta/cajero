@@ -1,4 +1,4 @@
-
+<div >
 <h1>Ingrese la cantidad que decea retirar</h1>
 <form #CajeroForm="ngForm" (ngSubmit)="retirarDinero()">
     <input type="number" name="cantidadRetirarS" [(ngModel)]="cantidadRetirar" pattern="[0-9]+">
@@ -6,16 +6,22 @@
     <button type="submit" mat-button color="primary">Enviar</button>
 </form>
 
-<div *ngIf="title">
+
+
+<div>
+    <button mat-stroked-button color="warn" (click)="closeBoton(false)">Ok!</button>
+</div>
+
+<div *ngIf="title" style="position: absolute;">
     {{title}}
     
     <div *ngIf="primtfValores" >
         Billetes dados
-        {{primtfValores}}
+        <ul *ngFor="let item of primtfValores">
+            <li>{{item}}</li>
+        </ul>
 
     </div>
 </div>
 
-<div>
-    <button mat-stroked-button color="warn" (click)="closeBoton(false)">Ok!</button>
 </div>
